@@ -1,0 +1,9 @@
+day1:walkthrough - mansoorwali
+commands:
+whoami:current user check kiya (kali)
+pwd:path check kiya(home/kali)
+cd /:root driectory dekhi
+ls: file or list kiya
+mkdir: day1-test folder banayaa
+cd day1-test: folder k andar gaya
+ls -la: permission check kiya
