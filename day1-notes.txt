@@ -7,3 +7,61 @@ ls: file or list kiya
 mkdir: day1-test folder banayaa
 cd day1-test: folder k andar gaya
 ls -la: permission check kiya
+
+
+
+
+day2:
+    1 Day 2 ka folder banaya aur andar gaye:
+cd ~
+mkdir -p day2-permissions && cd day2-permissions
+ 2. Testing ke liye website ke folders banaye:
+mkdir -p webapp/public webapp/config webapp/logs
+ 3. Char (4) files create keen:
+touch webapp/index.html webapp/public/style.css webapp/config/db.conf webapp/logs/app.log
+ 4. Jan-bujh kar permissions kharab keen (Bimari create ki):
+chmod 777 webapp/config/db.conf
+chmod 000 webapp/index.html
+ 5. Check kiya ke kharab ho gayi hain ya nahi:
+ls -la webapp/config/db.conf webapp/index.html
+ 6. Script ko run karne ki permission di:
+chmod +x fix_permissions.sh
+ 7. Script ko chalaya (jisne sab theek kar diya):
+./fix_permissions.sh
+ 8. Background programs aur CPU monitor check kiya:
+ps aux | head -10
+top
+  #!/bin/bash
+# ==============================================================================
+# Script Name : fix_permissions.sh
+# Author      : Mansoor Wali
+# Track       : IT & Cyber Security Internship (Week 1 - Day 2 Deliverable)
+# Objective   : Bulk-fix a broken permission tree to security best practices.
+# ==============================================================================
+TARGET_DIR="${1:-./webapp}"
+echo "======================================================"
+echo "    LINUX SECURITY AUTOMATION: PERMISSION TREE FIXER  "
+echo "======================================================"
+echo "[*] Target Directory: $TARGET_DIR"
+if [ ! -d "$TARGET_DIR" ]; then
+    echo "[!] Error: Directory $TARGET_DIR does not exist!"
+    exit 1
+fi
+ 1. Tamam Folders ko 755 kar do:
+echo "[*] Step 1: Bulk-fixing all Directories to 755 (rwxr-xr-x)..."
+find "$TARGET_DIR" -type d -exec chmod 755 {} +
+echo "[+] All directories secured to 755."
+ 2. Tamam Aam Files ko 644 kar do:
+echo "[*] Step 2: Bulk-fixing all Standard Files to 644 (rw-r--r--)..."
+find "$TARGET_DIR" -type f -exec chmod 644 {} +
+echo "[+] All regular files secured to 644."
+ 3. Sensitive Password/Config files ko 600 (Owner Only) par lock kar do:
+echo "[*] Step 3: Hardening Sensitive Config files (*.conf) to 600..."
+find "$TARGET_DIR" -type f -name "*.conf" -exec chmod 600 {} +
+echo "[+] Sensitive configuration files hardened to 600 (Owner Only)."
+4. Result check karo:
+echo "======================================================"
+echo "    AUDIT & VERIFICATION AFTER BULK-FIX                "
+echo "======================================================"
+ls -la "$TARGET_DIR/config/db.conf" "$TARGET_DIR/index.html"
+echo "[SUCCESS] Permission Tree successfully hardened and fixed!"
