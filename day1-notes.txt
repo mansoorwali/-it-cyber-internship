@@ -60,6 +60,16 @@ echo "[*] Step 3: Hardening Sensitive Config files (*.conf) to 600..."
 find "$TARGET_DIR" -type f -name "*.conf" -exec chmod 600 {} +
 echo "[+] Sensitive configuration files hardened to 600 (Owner Only)."
 4. Result check karo:
+
+day3:
+Wireshark live capture chalaya.
+TCP 3-Way Handshake ([SYN], [SYN, ACK], [ACK]) verify kiya.
+6 Protocols identify kiye: TCP, TLSv1.2, ICMPv6, DNS, ICMP, aur ARP.
+Networking Fundamentals
+• OSI Model (7 Layers) & TCP/IP
+• IPv4 / IPv6
+• Core Protocols (TCP, UDP, DNS, HTTP, ICMP)
+• 3-Way Handshak
 echo "======================================================"
 echo "    AUDIT & VERIFICATION AFTER BULK-FIX                "
 echo "======================================================"
