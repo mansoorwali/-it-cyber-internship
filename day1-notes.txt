@@ -71,7 +71,16 @@ Networking Fundamentals
 • Core Protocols (TCP, UDP, DNS, HTTP, ICMP)
 • 3-Way Handshak
 echo "======================================================"
-echo "    AUDIT & VERIFICATION AFTER BULK-FIX                "
-echo "======================================================"
-ls -la "$TARGET_DIR/config/db.conf" "$TARGET_DIR/index.html"
-echo "[SUCCESS] Permission Tree successfully hardened and fixed!"
+
+
+day4:
+vlans , swtiching, routing , automations 
+practicallly check in wireshark and command line and also automation script
+
+
+day5:
+python for automation and regular expression
+1: we create text logs file 
+2: second step we create python script for ip detection
+3: we run the script 
+
