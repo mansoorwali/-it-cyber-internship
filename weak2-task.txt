@@ -1,0 +1,8 @@
+Week 2 — Day 1 Task Completed:
+1. Topic: REST APIs, JSON Parsing in Python & Cybersecurity Fundamentals.
+2. Lab Work:
+   - Python script (threat_intel_api.py) banaya jo internet REST API se target IP ka data (Country, ISP, ASN) automate fetch karta hai.
+   - HTTP 200 status verify kiya aur response ko parse karke threat_intel_report.json file banayi.
+3. Theory Covered:
+   - CIA Triad (Confidentiality, Integrity, Availability)
+   - Authentication vs Authorization (AuthN vs AuthZ)
